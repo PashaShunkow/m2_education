@@ -14,7 +14,7 @@ class App
         //$this->showSingleton();
         //$this->showFactory();
         //$this->showObserver();
-        $this->showDMAndAR();
+        //$this->showDMAndAR();
     }
 
     /**
@@ -89,12 +89,12 @@ class App
         $marine        = $marineFactory->create();
         $alien         = $alienFactory->create();
 
-        $mapper        = new \Service\Mapper\Marine();
-        /* $mapper->saveUnit($marine);
-        echo sprintf('Created row with id: %s', $marine->getId());*/
+/*        $mapper        = new \Service\Mapper\Marine();
+        $mapper->saveUnit($marine);
+        echo sprintf('Created row with id: %s', $marine->getId());
         $marine->setId(16);
         $mapper->deleteUnit($marine);
-        echo sprintf('Deleted row with id: %s', $marine->getId());
+        echo sprintf('Deleted row with id: %s', $marine->getId());*/
 
 /*        $alien->save();
         echo sprintf('Created row with id: %s', $alien->getId());*/
