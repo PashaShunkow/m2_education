@@ -15,6 +15,24 @@ class App
         //$this->showFactory();
         //$this->showObserver();
         //$this->showDMAndAR();
+        $this->showServiceLocatorAndDI();
+    }
+
+    public function showServiceLocatorAndDI()
+    {
+        \Service\ServiceLocator::declareService('battle_map', new \Service\Map(
+            new \Service\Test()
+        ));
+        $marineFactory = new \Service\Factory\Marine();
+        $marine        = $marineFactory->create();
+
+        $alienFactory  = new \Service\Factory\Alien();
+        $alien         = $alienFactory->create();
+
+
+        //echo $marine->isOnMap();
+        echo $alien->isOnMap();
+        $alien->useTest();
     }
 
     /**

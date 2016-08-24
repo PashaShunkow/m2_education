@@ -2,6 +2,8 @@
 
 namespace Service\Factory;
 
+use Service\ObjectManager;
+
 class Alien extends Base
 {
     /**
@@ -11,7 +13,7 @@ class Alien extends Base
      */
     public function create()
     {
-        $alien = new \Object\Unit\Alien();
+        $alien = ObjectManager::getInstance()->createObject('Object\Unit\Alien');
         $alien->setHealth(65);
         $alien->setPower(rand(1, 10));
         return $alien;

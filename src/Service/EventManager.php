@@ -10,6 +10,11 @@ class EventManager extends Singleton
     protected $_observers = [];
 
     /**
+     * @var Singleton|null
+     */
+    protected $_instance;
+
+    /**
      * Throws system event
      *
      * @param string $name Event name

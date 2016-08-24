@@ -2,8 +2,14 @@
 
 namespace Object\Unit;
 
+use Service\Map;
+use Service\ServiceLocator;
+
 class Marine extends Base
 {
+    protected $_leftOffset = 10;
+
+    protected $_topOffset  = 15;
     /**
      * @var string
      */
@@ -50,5 +56,17 @@ class Marine extends Base
     public function calculateDamage()
     {
         return strlen($this->getWeaponType()) * 2;
+    }
+
+    /**
+     * Check is unit on map
+     *
+     * @return bool
+     */
+    public function isOnMap()
+    {
+        /** @var $map Map */
+        $map = ServiceLocator::getService('battle_map');
+        return $map->isUnitOnMap($this);
     }
 }

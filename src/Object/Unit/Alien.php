@@ -3,6 +3,8 @@
 namespace Object\Unit;
 
 use Service\Connector;
+use Service\Map;
+use Service\Test;
 
 class Alien extends Base
 {
@@ -16,15 +18,35 @@ class Alien extends Base
      */
     protected $_insertStatement;
 
+    protected $_battleMap;
+
+    protected $_test;
+
+    protected $_leftOffset = 30;
+
+    protected $_topOffset  = 20;
+
     /**
      * @var \PDOStatement
      */
     protected $_deleteStatement;
 
-    public function __construct()
+    public function __construct(Map $battleMap, Test $test, $name)
     {
+        $this->_battleMap       = $battleMap;
+        $this->_test            = $test;
         $this->_insertStatement = $this->getConnection()->prepare('INSERT INTO alien (`health2`,`power`) VALUES (?, ?)');
         $this->_deleteStatement = $this->getConnection()->prepare('DELETE FROM alien WHERE id = ?');
+    }
+
+    /**
+     * Check is unit on map
+     *
+     * @return bool
+     */
+    public function isOnMap()
+    {
+        return $this->_battleMap->isUnitOnMap($this);
     }
 
     /**
@@ -100,5 +122,10 @@ class Alien extends Base
     public function delete()
     {
         $this->_deleteStatement->execute([$this->getId()]);
+    }
+
+    public function useTest()
+    {
+        $this->_test->sayHello();
     }
 }

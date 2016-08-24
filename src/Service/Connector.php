@@ -7,7 +7,12 @@ class Connector extends Singleton
     /**
      * @var \PDO
      */
-    protected $_connection;
+     protected $_connection;
+
+    /**
+     * @var Singleton|null
+     */
+     static protected $_instance;
 
     /**
      * Connector constructor.

@@ -13,6 +13,9 @@ abstract class Base
 
     protected $_id;
 
+    protected $_leftOffset = 0;
+    protected $_topOffset  = 0;
+
     /**
      * Returns unit damage amount
      *
@@ -26,6 +29,33 @@ abstract class Base
      * @return string
      */
     abstract function getType();
+
+    /**
+     * Check is unit in map
+     *
+     * @return bool
+     */
+    abstract function isOnMap();
+
+    /**
+     * Returns left offset
+     *
+     * @return int
+     */
+    public function getLeftOffset()
+    {
+        return $this->_leftOffset;
+    }
+
+    /**
+     * Returns top offset
+     *
+     * @return int
+     */
+    public function getTopOffset()
+    {
+        return $this->_topOffset;
+    }
 
     /**
      * Set health value
