@@ -7,10 +7,13 @@ if ($_SERVER['REQUEST_URI'] == '/favicon.ico') {
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+/*
+
 require_once 'App.php';
 $app = new App();
-$app->run();
+$app->run();*/
 
-//require_once '../Examples/Reflection.php'
+//require_once '../Examples/Traits.php'
+//require_once  '../Examples/Closure.php';
 
 ?>
