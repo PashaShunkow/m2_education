@@ -20,9 +20,7 @@ class App
 
     public function showServiceLocatorAndDI()
     {
-        \Service\ServiceLocator::declareService('battle_map', new \Service\Map(
-            new \Service\Test()
-        ));
+        \Service\ServiceLocator::declareService('battle_map', new \Service\Map());
         $marineFactory = new \Service\Factory\Marine();
         $marine        = $marineFactory->create();
 
@@ -30,7 +28,7 @@ class App
         $alien         = $alienFactory->create();
 
 
-        //echo $marine->isOnMap();
+        echo $marine->isOnMap();
         echo $alien->isOnMap();
         $alien->useTest();
     }

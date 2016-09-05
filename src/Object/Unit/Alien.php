@@ -31,7 +31,7 @@ class Alien extends Base
      */
     protected $_deleteStatement;
 
-    public function __construct(Map $battleMap, Test $test, $name)
+    public function __construct(Map $battleMap, Test $test)
     {
         $this->_battleMap       = $battleMap;
         $this->_test            = $test;

@@ -11,6 +11,6 @@ require_once 'App.php';
 $app = new App();
 $app->run();
 
-//require_once '../Examples/Reflection.php'
+require_once '../Examples/Reflection.php'
 
 ?>

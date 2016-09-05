@@ -62,13 +62,15 @@ class BillingAddress
 }
 
 $reflection = new ReflectionClass('User');
-//
-/*var_dump($reflection->getName());
-//
+
+var_dump($reflection->getName());
+
 var_dump($reflection->getConstructor());
-//
-var_dump($reflection->getFileName());*/
-//
+
+var_dump($reflection->getFileName());
+
+
+
 $args = array();
 
 foreach ($reflection->getConstructor()->getParameters() as $parameter)

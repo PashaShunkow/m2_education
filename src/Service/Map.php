@@ -13,9 +13,9 @@ class Map
 
     protected $_data;
 
-    public function __construct(Data $data)
+    public function __construct()
     {
-        $this->_data = $data;
+        //$this->_data = $data;
     }
 
     /**
@@ -47,7 +47,7 @@ class Map
      */
     public function isUnitOnMap(Base $unit)
     {
-        $this->_data->execute();
+        //$this->_data->execute();
         return $this->_width > $unit->getLeftOffset() && $this->_height > $unit->getTopOffset();
     }
 }
